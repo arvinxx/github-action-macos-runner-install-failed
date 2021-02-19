@@ -1,56 +1,5 @@
 {
-  "name": "umi-electron-template",
-  "version": "1.8.2",
-  "author": "Arvin Xu<arvinx@foxmail.com>",
-  "main": "main.js",
-  "description": "umi electron template",
-  "private": true,
-  "repository": "https://github.com/arvinxx/umi-electron-template.git",
-  "scripts": {
-    "start": "yarn electron:dev",
-    "render:dev": "cross-env APP_ROOT=src/renderer PORT=7777 umi dev",
-    "electron:dev": "cross-env APP_ROOT=src/renderer PORT=7777 umi dev electron",
-    "---------": "",
-    "build": "cross-env APP_ROOT=src/renderer umi build electron",
-    "build:local": "cross-env APP_ROOT=src/renderer umi build electron --dir",
-    "electron:build:win": "cross-env APP_ROOT=src/renderer umi build electron --win",
-    "electron:build:mac": "cross-env APP_ROOT=src/renderer umi build electron --mac",
-    "electron:build:linux": "cross-env APP_ROOT=src/renderer umi build electron --linux",
-    "build:mac-zip": "ts-node scripts/buildMacZip.ts",
-    "--------- ": "",
-    "devtools": "react-devtools",
-    "---------    ": "",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
-    "---------  ": "",
-    "release": "semantic-release",
-    "---------   ": "",
-    "lint": "yarn lint-eslint && yarn tsc",
-    "tsc": "yarn tsc:renderer && yarn tsc:main",
-    "tsc:renderer": "tsc -p src/renderer/tsconfig-check.json",
-    "tsc:main": "tsc -p src/main/tsconfig-check.json",
-    "lint-eslint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty src",
-    "lint-staged": "lint-staged",
-    "lint-styles": "stylelint",
-    "lint-staged:js": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty",
-    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.ts,.tsx --format=pretty ",
-    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-    "---------     ": "",
-    "clean": "rm -rf dist release .eslintcache ./src/.umi",
-    "postinstall": "cross-env APP_ROOT=src/renderer umi generate tmp && electron-builder install-app-deps",
-    "postuninstall": "electron-builder install-app-deps",
-    "rebuild-deps": "electron-builder install-app-deps"
-  },
-  "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
-      "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write",
-      "yarn lint:fix"
-    ]
-  },
-  "dependencies": {
+    "dependencies": {
     "electron-updater": "^4.3.5",
     "inversify": "^5.0.5",
     "log4js": "^6.3.0",
