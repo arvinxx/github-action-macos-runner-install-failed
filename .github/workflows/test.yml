@@ -4,7 +4,10 @@ on: [push, pull_request]
 jobs:
   test:
     name: Code quality check
-    runs-on: macos-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, windows-latest, ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v2
